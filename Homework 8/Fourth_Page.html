@@ -1,0 +1,51 @@
+<html>
+    <head>  
+        <title>Fourth_Page</title>
+        <script>
+            var actualAnswer;
+            var count1;
+            count1 = 0;
+            var count2;
+            count2 = 0;
+            function question()
+            {
+                var n1 = Math.floor(Math.random() * 15);
+                var n2 = Math.floor(Math.random() * 15);
+                var n3 = Math.floor(Math.random() * 15);
+                actualAnswer = n1 + n2 + n3;
+                document.getElementById("Question").innerHTML = "Answer " + n1 + "+" + n2 + "+" + n3;
+            }
+            function check()
+            {
+                var Answer = document.getElementById("answer").value;
+                if (Answer == actualAnswer) 
+                {
+                    document.getElementById("result").innerHTML = "Correct";
+                    count1 = count1 + 1;
+                } 
+                else 
+                {
+                    document.getElementById("result").innerHTML = "Incorrect";
+                    count2= count2 + 1
+                }
+            }
+             function Count()
+            {
+                var count3;
+                count3 = count1 + count2;
+                var count4;
+                count4 = (count1 / count3) * 100;
+                    document.getElementById("correct1").innerHTML = "You got " + count1 + " correct and " + count2 + " wrong.";
+                    document.getElementById("correct2").innerHTML = "You got " + count4 + "% correct out of " + count3 + " questions.";
+            }
+        </script>
+    </head>
+    <body style="background-color: black; color: white;" onload="question();">
+        <div id="Question"></div>
+        <input type="text" id="answer"><br>
+        <button id="submit" onClick="check(),question(),Count();">Submit</button>
+        <div id="result"></div><br>
+        <div id="correct1"></div><br>
+        <div id="correct2"></div><br>
+    </body>
+</html>

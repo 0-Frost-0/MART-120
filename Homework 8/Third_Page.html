@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/Styles.css">
+        <script>
+            function fname1()
+            {
+                var fname = document.getElementById("name1").value
+                if(fname == "")
+                {
+                    document.getElementById("name1").focus();
+                    document.getElementById("name1").style.backgroundColor = "red";
+                }
+                else
+                {
+                    document.getElementById("name1").focus();
+                    document.getElementById("name1").style.backgroundColor = "white";
+                }
+            }
+            function lname2()
+            {
+                var lname = document.getElementById("name2").value
+                if(lname == "")
+                {
+                    document.getElementById("name2").focus();
+                    document.getElementById("name2").style.backgroundColor = "red";
+                }
+                else
+                {
+                    document.getElementById("name2").focus();
+                    document.getElementById("name2").style.backgroundColor = "white";
+                }
+            }
+            function Email1()
+            {
+                var email = document.getElementById("email1").value
+                if(email == "")
+                {
+                    document.getElementById("email1").focus();
+                    document.getElementById("email1").style.backgroundColor = "red";
+                }
+                else
+                {
+                    document.getElementById("email1").focus();
+                    document.getElementById("email1").style.backgroundColor = "white";
+                }
+            }
+            function terms()
+            {
+                var checkbox = document.getElementById("term1");
+                if (checkbox.checked == true)
+                {
+                    document.getElementById("term1").focus();
+                    document.getElementById("tos1").innerHTML = "";
+                }
+                else
+                {
+                    document.getElementById("term1").focus();
+                    document.getElementById("tos1").innerHTML = " Required"
+                }
+            }
+        </script>
+        <title>Third Page</title>
+    </head>
+    <body style="background-color: black; color: white; background-image: none;">
+        <h1 style="color: forestgreen;">Contact Us</h1>
+        <form id="form">
+            First Name:<input type="text" id="name1"><br>
+            Last Name:<input type="text" id="name2"><br>
+            Email:<input type="text" id="email1"><br>
+            <h3>Accept Terms of Agreement</h3>
+            <input type="checkbox" name="Accept" value="Accept" id="term1"> Accept<span id="tos1" style="color: red;"></span><br>
+            <button type="button" class="btn btn-success" onclick="fname1(),lname2(),Email1(),terms()">Submit</button>
+        </form><br>
+        <a href="First_Page.html" class="pagelink">Go to Home Page</a>
+        <br><a href="Second_Page.html" class="pagelink">Go to Second Page</a>
+    </body>
+</html>
